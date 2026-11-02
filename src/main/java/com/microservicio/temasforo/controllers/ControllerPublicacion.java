@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservicio.temasforo.models.Comentario;
 import com.microservicio.temasforo.models.Publicacion;
 import com.microservicio.temasforo.service.PublicacionService;
 
