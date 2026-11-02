@@ -17,5 +17,7 @@ public interface PublicacionService {
 
     Publicacion buscarPublicacion(Long id);
 
+     Publicacion buscarPublicacionPorNombre(String titulo);
+
     
 }

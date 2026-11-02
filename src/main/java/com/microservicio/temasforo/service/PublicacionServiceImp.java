@@ -79,4 +79,16 @@ public class PublicacionServiceImp implements PublicacionService {
         return publicacionRepository.findAll();
     }
 
+
+    public Publicacion buscarPublicacionPorNombre(String titulo){
+
+       if(publicacionRepository.existsByTitulo(titulo)){
+
+            return publicacionRepository.findByTitulo(titulo);
+       }
+
+       return null;
+
+    }
+    
 }

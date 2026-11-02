@@ -54,6 +54,13 @@ public Publicacion(Long id,String titulo,String contenido,LocalDate fechaPublica
 
 }
 
+public Publicacion(String titulo){
+
+    this.titulo=titulo;
+
+
+}
+
 
 public Publicacion(String titulo,String contenido,LocalDate fechaPublicacion,boolean estado,Long idUsuario){
 

@@ -68,7 +68,11 @@ public Publicacion modificarPublicacion(@PathVariable Long id, @RequestBody Publ
 }
 
 
+@GetMapping ("/buscar")
+public Publicacion buscarPorTitulo(@RequestBody Publicacion publicacion){
 
+    return publicacionService.buscarPublicacionPorNombre(publicacion.getTitulo());
+}
 
 
 }
