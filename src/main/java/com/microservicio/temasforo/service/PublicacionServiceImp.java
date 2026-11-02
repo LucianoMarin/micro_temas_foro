@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.microservicio.temasforo.Exceptions.PublicacionNotFoundException;
 import com.microservicio.temasforo.models.Publicacion;
 import com.microservicio.temasforo.repository.PublicacionRepository;
 
@@ -33,6 +34,11 @@ public class PublicacionServiceImp implements PublicacionService {
     @Override
     public void eliminarPublicacion(Long id) {
 
+        if(!publicacionRepository.existsById(id)){
+
+            throw new PublicacionNotFoundException("ID NO VALIDO, NO SE PUEDE ELIMINAR PUBLICACION");
+        }
+
         publicacionRepository.deleteById(id);
     }
 
@@ -50,9 +56,9 @@ public class PublicacionServiceImp implements PublicacionService {
             modificar.setContenido(publicacion.getContenido());
 
         }
-        if (publicacion.getFecha_publicacion() != null) {
+        if (publicacion.getFechaPublicacion() != null) {
 
-            modificar.setFecha_publicacion(publicacion.getFecha_publicacion());
+            modificar.setFechaPublicacion(publicacion.getFechaPublicacion());
         }
 
         if (publicacion.isEstado()) {

@@ -29,7 +29,7 @@ private String titulo;
 private String contenido;
 
 @Column (name="fecha_publicacion")
-private LocalDate  fecha_publicacion;
+private LocalDate  fechaPublicacion;
 
 @Column (name="estado")
 private boolean estado;
@@ -42,12 +42,12 @@ private Long id_usuario;
 public Publicacion(){}
 
 
-public Publicacion(Long id,String titulo,String contenido,LocalDate fecha_publicacion,boolean estado,Long id_usuario){
+public Publicacion(Long id,String titulo,String contenido,LocalDate fechaPublicacion,boolean estado,Long id_usuario){
 
     this.id=id;
     this.titulo=titulo;
     this.contenido=contenido;
-    this.fecha_publicacion=fecha_publicacion;
+    this.fechaPublicacion=fechaPublicacion;
     this.estado=estado;
     this.id_usuario=id_usuario;
 
@@ -55,11 +55,11 @@ public Publicacion(Long id,String titulo,String contenido,LocalDate fecha_public
 }
 
 
-public Publicacion(String titulo,String contenido,LocalDate fecha_publicacion,boolean estado,Long id_usuario){
+public Publicacion(String titulo,String contenido,LocalDate fechaPublicacion,boolean estado,Long id_usuario){
 
     this.titulo=titulo;
     this.contenido=contenido;
-    this.fecha_publicacion=fecha_publicacion;
+    this.fechaPublicacion=fechaPublicacion;
     this.estado=estado;
     this.id_usuario=id_usuario;
 

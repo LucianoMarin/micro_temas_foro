@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.microservicio.temasforo.Exceptions.ComentarioNotFoundException;
 import com.microservicio.temasforo.models.Comentario;
 import com.microservicio.temasforo.repository.ComentarioRepository;
 
@@ -33,6 +34,11 @@ public class ComentarioServiceImp implements ComentarioService {
 
     @Override
     public void eliminarComentario(Long id) {
+
+        if(!comentarioRepository.existsById(id)){
+            throw new ComentarioNotFoundException("ID NO VALIDO, NO SE PUEDE ELIMINAR COMENTARIO");
+
+        }
 
         comentarioRepository.deleteById(id);
 
