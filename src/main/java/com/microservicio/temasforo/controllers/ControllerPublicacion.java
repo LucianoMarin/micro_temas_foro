@@ -53,7 +53,7 @@ public Publicacion crearPublicacion(@RequestBody Publicacion publicacion){
 }
 
 
-@DeleteMapping 
+@DeleteMapping ("/{id}")
 public void elimianrPublicacion(@PathVariable Long id){
 
     publicacionService.eliminarPublicacion(id);

@@ -65,9 +65,9 @@ public class PublicacionServiceImp implements PublicacionService {
 
             modificar.setEstado(publicacion.isEstado());
         }
-        if (publicacion.getId_usuario() != null) {
+        if (publicacion.getIdUsuario() != null) {
 
-            modificar.setId_usuario(publicacion.getId_usuario());
+            modificar.setIdUsuario(publicacion.getIdUsuario());
         }
 
            return publicacionRepository.save(modificar);

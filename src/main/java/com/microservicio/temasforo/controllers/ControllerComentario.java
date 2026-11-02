@@ -51,7 +51,7 @@ public Comentario creaComentario(@RequestBody Comentario comentario){
 }
 
 
-@DeleteMapping 
+@DeleteMapping("/{id}") 
 public void eliminarComentario(@PathVariable Long id){
 
     comentarioService.eliminarComentario(id);
