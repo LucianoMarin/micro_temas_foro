@@ -3,10 +3,13 @@ package com.microservicio.temasforo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.microservicio.temasforo.models.Publicacion;
 import com.microservicio.temasforo.repository.PublicacionRepository;
 
+
+@Service 
 public class PublicacionServiceImp implements PublicacionService {
 
     @Autowired

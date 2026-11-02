@@ -3,10 +3,13 @@ package com.microservicio.temasforo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.microservicio.temasforo.models.Comentario;
 import com.microservicio.temasforo.repository.ComentarioRepository;
 
+
+@Service 
 public class ComentarioServiceImp implements ComentarioService {
     
     @Autowired 
