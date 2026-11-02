@@ -1,7 +1,7 @@
 package com.microservicio.temasforo.models;
 
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,7 +32,7 @@ public class Comentario {
     private Publicacion publicacion;
     
     @Column (name="fecha_publicacion")
-    private Date fechaPublicacion;
+    private LocalDate fechaPublicacion;
     
 
     @Column (name="usuario_id")
@@ -44,7 +44,7 @@ public class Comentario {
     public Comentario(){}
 
 
-    public Comentario(Long id,String contenido,Publicacion publicacion,Date fechaPublicacion,Long idUsuario){
+    public Comentario(Long id,String contenido,Publicacion publicacion,LocalDate fechaPublicacion,Long idUsuario){
 
         this.id=id;
         this.contenido=contenido;
@@ -54,7 +54,18 @@ public class Comentario {
 
 
     }
+    
 
+      public Comentario(String contenido,Publicacion publicacion,LocalDate fechaPublicacion,Long idUsuario){
+
+
+        this.contenido=contenido;
+        this.publicacion=publicacion;
+        this.fechaPublicacion=fechaPublicacion;
+        this.idUsuario=idUsuario;
+
+
+    }
 
     
 }

@@ -1,6 +1,6 @@
 package com.microservicio.temasforo.models;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,10 +29,10 @@ private String titulo;
 private String contenido;
 
 @Column (name="fecha_publicacion")
-private Date fecha_publicacion;
+private LocalDate  fecha_publicacion;
 
 @Column (name="estado")
-private String estado;
+private boolean estado;
 
 @Column (name="usuario_id")
 private Long id_usuario;
@@ -42,9 +42,21 @@ private Long id_usuario;
 public Publicacion(){}
 
 
-public Publicacion(Long id,String titulo,String contenido,Date fecha_publicacion,String estado,Long id_usuario){
+public Publicacion(Long id,String titulo,String contenido,LocalDate fecha_publicacion,boolean estado,Long id_usuario){
 
     this.id=id;
+    this.titulo=titulo;
+    this.contenido=contenido;
+    this.fecha_publicacion=fecha_publicacion;
+    this.estado=estado;
+    this.id_usuario=id_usuario;
+
+
+}
+
+
+public Publicacion(String titulo,String contenido,LocalDate fecha_publicacion,boolean estado,Long id_usuario){
+
     this.titulo=titulo;
     this.contenido=contenido;
     this.fecha_publicacion=fecha_publicacion;

@@ -55,9 +55,9 @@ public class PublicacionServiceImp implements PublicacionService {
             modificar.setFecha_publicacion(publicacion.getFecha_publicacion());
         }
 
-        if (publicacion.getEstado() != null && !publicacion.getEstado().isBlank()) {
+        if (publicacion.isEstado()) {
 
-            modificar.setEstado(publicacion.getEstado());
+            modificar.setEstado(publicacion.isEstado());
         }
         if (publicacion.getId_usuario() != null) {
 
