@@ -2,39 +2,80 @@ package com.microservicio.temasforo.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.microservicio.temasforo.models.Comentario;
+import com.microservicio.temasforo.repository.ComentarioRepository;
 
 public class ComentarioServiceImp implements ComentarioService {
     
+    @Autowired 
+    ComentarioRepository comentarioRepository;
+
+    
+
     @Override
     public Comentario buscarcComentario(Long id) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return comentarioRepository.findById(id).orElseThrow();
     }
 
 
     @Override
     public Comentario crearComentario(Comentario comentario) {
-        // TODO Auto-generated method stub
-        return null;
+        return comentarioRepository.save(comentario);
     }
+
+
 
     @Override
     public void eliminarComentario(Long id) {
-        // TODO Auto-generated method stub
-        
+
+        comentarioRepository.deleteById(id);
+
     }
+
+
 
     @Override
     public Comentario modificarComentario(Long id, Comentario comentario) {
-        // TODO Auto-generated method stub
-        return null;
+
+        Comentario modificar=comentarioRepository.findById(id).orElseThrow();
+
+        if(comentario.getContenido()!=null && !comentario.getContenido().isBlank()){
+
+            modificar.setContenido(comentario.getContenido());
+
+        }
+
+        if(comentario.getFechaPublicacion()!=null ){
+
+            modificar.setFechaPublicacion(comentario.getFechaPublicacion());
+        }
+
+        if(comentario.getIdUsuario()!=null){
+
+            modificar.setIdUsuario(comentario.getIdUsuario());
+
+        }
+
+        if(comentario.getPublicacion()!=null){
+
+            modificar.setPublicacion(comentario.getPublicacion());
+        }
+
+
+        return comentarioRepository.save(modificar);
     }
+
+
+
+
 
     @Override
     public List<Comentario> mostrarComentarios() {
-        // TODO Auto-generated method stub
-        return null;
+
+        return comentarioRepository.findAll();
     }
 
 }
