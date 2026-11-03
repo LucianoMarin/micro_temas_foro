@@ -60,7 +60,7 @@ public void elimianrPublicacion(@PathVariable Long id){
 }
 
 
-@PutMapping 
+@PutMapping ("/{id}")
 public Publicacion modificarPublicacion(@PathVariable Long id, @RequestBody Publicacion publicacion){
 
 
