@@ -58,7 +58,7 @@ public void eliminarComentario(@PathVariable Long id){
 }
 
 
-@PutMapping 
+@PutMapping("/{id}") 
 public Comentario modificarComentario(@PathVariable Long id, @RequestBody Comentario comentario){
 
 
